@@ -1,10 +1,9 @@
 package entities;
 
-import java.util.ArrayList;
 
 public class Lasanha extends Massa {
 
-	public Lasanha(String sabor, ArrayList<Ingrediente> listaIngredientes) {
+	public Lasanha(String sabor, ListaGenerica<Ingrediente> listaIngredientes) {
 		super(sabor, listaIngredientes);
 		
 	}
@@ -18,7 +17,7 @@ public class Lasanha extends Massa {
 	public double calculaPreco() {
 		double valorLasanha = 0;
 		
-		for(Ingrediente ingrediente : getListaIngredientes()) {
+		for(Ingrediente ingrediente : getListaIngredientesPorOrdemAlfabetica()) {
 			valorLasanha += ingrediente.getPreco();
 		}
 		
@@ -32,8 +31,13 @@ public class Lasanha extends Massa {
 	
 	@Override
 	public String toString() {
-		return "Lasanha de " + getSabor() + "\nPreço: " + this.calculaPreco() + "\nIngredientes: " + getListaIngredientes() + "\nCodigo: " + getCodigo()
-		;
+		return "Lasanha de " + getSabor() + "\nPreço: " + this.calculaPreco() + "\nIngredientes: "
+	+ getListaIngredientesPorOrdemAlfabetica() + "\nCodigo: " + getCodigo() + "\n";
 	}
 	
+	@Override
+	public String toStringPorPreco() {
+		return "Lasanha de " + getSabor() + "\nPreço: " + this.calculaPreco() + "\nIngredientes: "
+	+ getListaIngredientesPorPreco() + "\nCodigo: " + getCodigo() + "\n";
+	}
 }

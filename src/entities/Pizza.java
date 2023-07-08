@@ -4,17 +4,17 @@ import java.util.ArrayList;
 public class Pizza extends Massa{
 	
 	
-	public Pizza(String sabor, ArrayList<Ingrediente> listaIngredientes) {
+	public Pizza(String sabor, ListaGenerica<Ingrediente> listaIngredientes) {
 		super(sabor, listaIngredientes);
 		
 	}
 
 	@Override
 	public double calculaPreco() {
-		int numIngredientes = getListaIngredientes().size();
+		int numIngredientes = getListaIngredientesPorOrdemAlfabetica().size();
         double valorTotal = 0;
 
-        for (Ingrediente ingrediente : getListaIngredientes()) {
+        for (Ingrediente ingrediente : getListaIngredientesPorOrdemAlfabetica()) {
             valorTotal += ingrediente.getPreco();
         }
 
@@ -40,8 +40,13 @@ public class Pizza extends Massa{
 	
 	@Override
 	public String toString() {
-		return "Pizza de " + getSabor() + "\nPreço: " + this.calculaPreco() + "\nIngredientes: " + getListaIngredientes() + "\nCodigo: " + getCodigo()
-		;
+		return "Pizza de " + getSabor() + "\nPreço: " + this.calculaPreco() + "\nIngredientes: " 
+	+ getListaIngredientesPorOrdemAlfabetica() + "\nCodigo: " + getCodigo() + "\n";
+	}
+	
+	public String toStringPorPreco() {
+		return "Pizza de " + getSabor() + "\nPreço: " + this.calculaPreco() + "\nIngredientes: " 
+	+ getListaIngredientesPorPreco() + "\nCodigo: " + getCodigo() + "\n";
 	}
 
 	

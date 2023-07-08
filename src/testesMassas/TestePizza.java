@@ -4,6 +4,7 @@ import java.awt.dnd.DropTargetContext;
 import java.util.ArrayList;
 
 import entities.Ingrediente;
+import entities.ListaGenerica;
 import entities.Pizza;
 
 public class TestePizza {
@@ -14,16 +15,16 @@ public class TestePizza {
 		Ingrediente ingrediente2 = new Ingrediente("Mussarela", 25);
 		Ingrediente ingrediente3 = new Ingrediente("Calabresa", 20);
 
-		ArrayList<Ingrediente> ingredientes1 = new ArrayList<Ingrediente>();
+		ListaGenerica<Ingrediente> ingredientes1 = new ListaGenerica<Ingrediente>();
 
 		ingredientes1.add(ingrediente1);
 		ingredientes1.add(ingrediente2);
 		ingredientes1.add(ingrediente3);
 
-		ArrayList<Ingrediente> ingredientes2 = new ArrayList<Ingrediente>();
+		ListaGenerica<Ingrediente> ingredientes2 = new ListaGenerica<Ingrediente>();
 		ingredientes2.add(ingrediente2);
 
-		ArrayList<Ingrediente> ingredientes3 = new ArrayList<Ingrediente>();
+		ListaGenerica<Ingrediente> ingredientes3 = new ListaGenerica<Ingrediente>();
 		ingredientes3.add(ingrediente2);
 		ingredientes3.add(ingrediente3);
 
