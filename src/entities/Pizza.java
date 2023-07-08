@@ -1,23 +1,20 @@
 package entities;
 import java.util.ArrayList;
 
-public class Pizza {
+public class Pizza extends Massa{
 	
-	private String sabor;
-	private double preco;
-	private ArrayList<Ingrediente> listaIngredientes = new ArrayList<Ingrediente>();
 	
 	public Pizza(String sabor, ArrayList<Ingrediente> listaIngredientes) {
-		super();
-		this.sabor = sabor;
-		this.listaIngredientes = listaIngredientes;
+		super(sabor, listaIngredientes);
+		
 	}
 
+	@Override
 	public double calculaPreco() {
-		int numIngredientes = listaIngredientes.size();
+		int numIngredientes = getListaIngredientes().size();
         double valorTotal = 0;
 
-        for (Ingrediente ingrediente : listaIngredientes) {
+        for (Ingrediente ingrediente : getListaIngredientes()) {
             valorTotal += ingrediente.getPreco();
         }
 
@@ -29,14 +26,23 @@ public class Pizza {
 
         return valorTotal;
 	}
-
 	
 	@Override
-	public String toString() {
-		return "Pizza de " + sabor + "\nPreço: " + this.calculaPreco() + "\nIngredientes: " + listaIngredientes;
+	public String getCodigoLetra() {
+		return "P";
+	}
+	
+	@Override
+	public String getDescricao() {
+		return "Isso é uma pizza";
 	}
 	
 	
-	
+	@Override
+	public String toString() {
+		return "Pizza de " + getSabor() + "\nPreço: " + this.calculaPreco() + "\nIngredientes: " + getListaIngredientes() + "\nCodigo: " + getCodigo()
+		;
+	}
+
 	
 }

@@ -1,5 +1,6 @@
-package testes;
+package testesMassas;
 
+import java.awt.dnd.DropTargetContext;
 import java.util.ArrayList;
 
 import entities.Ingrediente;
@@ -35,6 +36,21 @@ public class TestePizza {
 		System.out.println(pizza2);
 		System.out.println();
 		System.out.println(pizza3);
+		
+		Ingrediente ingrediente4 = new Ingrediente("Peito de peru", 10);
+		
+		pizza2.addIngrediente(ingrediente4);
+		System.out.println();
+		System.out.println(pizza2);
+		
+		pizza3.removeIngrediente(ingrediente3);
+		System.out.println();
+		System.out.println(pizza3);
+		
+		System.out.println();
+		System.out.println("Contem esse ingrediente ? " + pizza1.verificaIngrediente(ingrediente4));
+		
+		System.out.println("Quantidade pizzas: " + Pizza.getQuantidadeMassas());
 
 	}
 
