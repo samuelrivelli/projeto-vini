@@ -7,24 +7,24 @@ import java.util.Map;
 
 public class CarrinhoCompras {
 
-	private Cliente cliente;
+	private String nomeCliente;
 	private ArrayList<Massa> listaMassas = new ArrayList<Massa>();
 	private static int contador = 0;
 	private String codigoIdentificador;
 
-	public CarrinhoCompras(Cliente cliente, ArrayList<Massa> listaMassas) {
-		this.cliente = cliente;
+	public CarrinhoCompras(String nomeCliente, ArrayList<Massa> listaMassas) {
+		this.nomeCliente = nomeCliente;
 		this.setListaMassas(listaMassas);
 		contador++;
 		this.codigoIdentificador ="Cliente "+ contador;
 	}
 
-	public Cliente getNomeCliente() {
-		return new Cliente(this.cliente);
+	public String getNomeCliente() {
+		return new String(this.nomeCliente);
 	}
 
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
+	public void setCliente(String nomeCliente) {
+		this.nomeCliente = nomeCliente;
 	}
 
 	public ArrayList<Massa> getListaMassas() {

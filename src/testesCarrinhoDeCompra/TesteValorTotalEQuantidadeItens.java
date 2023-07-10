@@ -3,7 +3,6 @@ package testesCarrinhoDeCompra;
 import java.util.ArrayList;
 
 import entities.CarrinhoCompras;
-import entities.Cliente;
 import entities.Ingrediente;
 import entities.Lasanha;
 import entities.ListaGenerica;
@@ -12,8 +11,6 @@ import entities.Pizza;
 
 public class TesteValorTotalEQuantidadeItens {
 	public static void main(String[] args) {
-		
-			Cliente cliente = new Cliente("Jose Silva");
 		
 			Ingrediente ingrediente1 = new Ingrediente("Molho de tomate", 5);
 			Ingrediente ingrediente2 = new Ingrediente("Carne moida", 20);
@@ -40,7 +37,7 @@ public class TesteValorTotalEQuantidadeItens {
 			listaMassas.add(l1);
 			listaMassas.add(pizza1);
 			
-			CarrinhoCompras carrinhoDeCompra = new CarrinhoCompras(cliente, listaMassas);
+			CarrinhoCompras carrinhoDeCompra = new CarrinhoCompras("Lara Alexandra", listaMassas);
 			
 			System.out.println("Valor total a ser pago: " +carrinhoDeCompra.calculaValorCarrinho());
 			System.out.println();

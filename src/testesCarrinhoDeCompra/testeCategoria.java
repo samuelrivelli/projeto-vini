@@ -3,7 +3,6 @@ package testesCarrinhoDeCompra;
 import java.util.ArrayList;
 
 import entities.CarrinhoCompras;
-import entities.Cliente;
 import entities.Ingrediente;
 import entities.Lasanha;
 import entities.ListaGenerica;
@@ -13,10 +12,7 @@ import entities.Pizza;
 public class testeCategoria {
 
 	public static void main(String[] args) {
-		Cliente cli1 = new Cliente("Joao");
-		Cliente cli2 = new Cliente("Vinicius");
-		Cliente cli3 = new Cliente("Pedro");
-
+		
 		Ingrediente ingrediente1 = new Ingrediente("Molho de tomate", 2000);
 		Ingrediente ingrediente2 = new Ingrediente("Carne moida", 1500);
 
@@ -56,9 +52,9 @@ public class testeCategoria {
 		ListaGenerica<Massa> listaMassas3 = new ListaGenerica<Massa>();
 		listaMassas3.add(pizza2);
 
-		CarrinhoCompras c1 = new CarrinhoCompras(cli1, listaMassas1);
-		CarrinhoCompras c2 = new CarrinhoCompras(cli2, listaMassas2);
-		CarrinhoCompras c3 = new CarrinhoCompras(cli3, listaMassas3);
+		CarrinhoCompras c1 = new CarrinhoCompras("Vinicius Martins", listaMassas1);
+		CarrinhoCompras c2 = new CarrinhoCompras("Joao Pedro", listaMassas2);
+		CarrinhoCompras c3 = new CarrinhoCompras("Bruna Silva", listaMassas3);
 
 		c1.getCategoria();
 		c2.getCategoria();

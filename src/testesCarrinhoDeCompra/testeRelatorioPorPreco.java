@@ -3,7 +3,6 @@ package testesCarrinhoDeCompra;
 import java.util.ArrayList;
 
 import entities.CarrinhoCompras;
-import entities.Cliente;
 import entities.Ingrediente;
 import entities.Lasanha;
 import entities.ListaGenerica;
@@ -13,8 +12,6 @@ import entities.Pizza;
 public class testeRelatorioPorPreco {
 
 	public static void main(String[] args) {
-		
-		Cliente cliente = new Cliente("Jose Silva");
 		
 		Ingrediente ingrediente1 = new Ingrediente("Molho de tomate", 5);
 		Ingrediente ingrediente2 = new Ingrediente("Carne moida", 20);
@@ -41,7 +38,7 @@ public class testeRelatorioPorPreco {
 		listaMassas.add(l1);
 		listaMassas.add(pizza1);
 		
-		CarrinhoCompras carrinhoDeCompra = new CarrinhoCompras(cliente, listaMassas);
+		CarrinhoCompras carrinhoDeCompra = new CarrinhoCompras("Joao da Silva", listaMassas);
 		
 		carrinhoDeCompra.relatorioCarrinho_IngredientesPorPreco();
 
